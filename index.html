@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oasis Dental Clinic — Premium Dental Care in Kampala</title>
+<meta name="description" content="Oasis Dental Clinic delivers world-class dental care in Kampala, Uganda. Modern technology, gentle touch, beautiful smiles. Book your appointment today.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{
+    --ink:#0a2540;
+    --ink-soft:#1b3a5c;
+    --teal:#0d9488;
+    --teal-deep:#0f766e;
+    --mint:#5eead4;
+    --sand:#f8f5ef;
+    --cream:#fdfbf7;
+    --gold:#c8a96a;
+    --coral:#ff7a66;
+    --line:rgba(10,37,64,.08);
+  }
+  *{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    overflow-x:hidden;
+  }
+  .font-display{ font-family:'Fraunces',serif; font-optical-sizing:auto; }
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .reveal{ opacity:0; transform:translateY(30px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+  .reveal.in{ opacity:1; transform:none; }
+  .reveal-delay-1{ transition-delay:.1s; }
+  .reveal-delay-2{ transition-delay:.2s; }
+  .reveal-delay-3{ transition-delay:.3s; }
+  .reveal-delay-4{ transition-delay:.4s; }
+
+  .nav-blur{ backdrop-filter:saturate(180%) blur(14px); -webkit-backdrop-filter:saturate(180%) blur(14px); }
+  .hero-grad{
+    background:
+      radial-gradient(60% 50% at 80% 0%, rgba(94,234,212,.35) 0%, rgba(94,234,212,0) 60%),
+      radial-gradient(50% 50% at 10% 90%, rgba(13,148,136,.18) 0%, rgba(13,148,136,0) 60%),
+      linear-gradient(180deg, #fdfbf7 0%, #f4f9f8 100%);
+  }
+  .text-balance{ text-wrap:balance; }
+  .glass{
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(255,255,255,.6);
+    backdrop-filter:blur(10px);
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+    box-shadow:0 10px 30px -10px rgba(13,148,136,.6), inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px -12px rgba(13,148,136,.7), inset 0 1px 0 rgba(255,255,255,.3); }
+  .btn-gold{
+    background:linear-gradient(135deg, #d8bb7e 0%, #b89352 100%);
+    box-shadow:0 10px 30px -10px rgba(184,147,82,.5), inset 0 1px 0 rgba(255,255,255,.3);
+  }
+  .chip{
+    background:rgba(13,148,136,.08);
+    border:1px solid rgba(13,148,136,.18);
+    color:var(--teal-deep);
+  }
+  .service-card{
+    background:#fff;
+    border:1px solid var(--line);
+    transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s, border-color .5s;
+  }
+  .service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 30px 60px -25px rgba(10,37,64,.25);
+    border-color:rgba(13,148,136,.3);
+  }
+  .service-icon{
+    background:linear-gradient(135deg, rgba(13,148,136,.12), rgba(94,234,212,.18));
+    color:var(--teal-deep);
+  }
+  .marquee{ animation:scroll 38s linear infinite; }
+  @keyframes scroll{ to{ transform:translateX(-50%); } }
+  .underline-grow{ position:relative; }
+  .underline-grow::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:1px; width:0; background:currentColor; transition:width .4s ease;
+  }
+  .underline-grow:hover::after{ width:100%; }
+  .float{ animation:float 6s ease-in-out infinite; }
+  @keyframes float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .blob{
+    filter:blur(60px); opacity:.5; border-radius:50%; position:absolute; z-index:0;
+  }
+  .star{ color:#f5b301; }
+  .map-embed{ filter:saturate(1.1) contrast(1.02); }
+  input, textarea, select{ font-family:inherit; }
+  .field{
+    background:#fff; border:1px solid var(--line); transition:border-color .25s, box-shadow .25s;
+  }
+  .field:focus{ outline:none; border-color:var(--teal); box-shadow:0 0 0 4px rgba(13,148,136,.12); }
+  .ring-tile{
+    background:
+      radial-gradient(120% 120% at 0% 0%, rgba(94,234,212,.25), transparent 50%),
+      linear-gradient(180deg,#0a2540, #0f3a5e);
+  }
+  .accent-bar{ height:3px; width:48px; background:linear-gradient(90deg, var(--teal), var(--mint)); border-radius:2px; }
+  details summary::-webkit-details-marker{ display:none; }
+  .faq-item summary{ list-style:none; cursor:pointer; }
+  .faq-item[open] .faq-icon{ transform:rotate(45deg); }
+  .faq-icon{ transition:transform .3s ease; }
+  .ticker-num{ font-variant-numeric:tabular-nums; }
+  .badge-verified{
+    background:linear-gradient(135deg, rgba(13,148,136,.1), rgba(94,234,212,.15));
+    color:var(--teal-deep);
+  }
+  .shimmer{
+    background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%);
+    background-size:200% 100%;
+    animation:sh 2.4s infinite;
+  }
+  @keyframes sh{ to{ background-position:-200% 0; } }
+  .photo-frame{
+    box-shadow:0 40px 80px -30px rgba(10,37,64,.4);
+  }
+  .video-cover{
+    background:
+      linear-gradient(135deg, rgba(10,37,64,.55), rgba(13,148,136,.35)),
+      url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80') center/cover;
+  }
+  .blob-teal{ background:radial-gradient(circle, rgba(94,234,212,.55), transparent 70%); }
+  .blob-gold{ background:radial-gradient(circle, rgba(200,169,106,.45), transparent 70%); }
+  .divider-wave{
+    height:80px; width:100%; display:block;
+  }
+  .count-card{
+    background:linear-gradient(180deg,#fff, #fbfdfc);
+  }
+  .hover-lift{ transition:transform .4s cubic-bezier(.16,1,.3,1); }
+  .hover-lift:hover{ transform:translateY(-4px); }
+
+  /* Tooth float animation */
+  .tooth-bounce{ animation:tooth 4s ease-in-out infinite; }
+  @keyframes tooth{ 0%,100%{ transform:translateY(0) rotate(-4deg);} 50%{ transform:translateY(-8px) rotate(4deg);} }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#f4f9f8; }
+  ::-webkit-scrollbar-thumb{ background:#0d9488; border-radius:8px; }
+
+  .mobile-menu{ transition:transform .4s cubic-bezier(.16,1,.3,1), opacity .3s; }
+  .mobile-menu.closed{ transform:translateX(100%); opacity:0; pointer-events:none; }
+</style>
+</head>
+<body class="relative">
+<div class="grain"></div>
+
+<!-- TOP BAR -->
+<div class="bg-[var(--ink)] text-white text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-5 opacity-90">
+      <span class="hidden sm:flex items-center gap-2"><i class="fa-regular fa-clock text-[var(--mint)]"></i> Mon–Sat: 8:00 AM – 7:00 PM</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[var(--mint)]"></i> Kampala, Uganda</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.google.com/maps/place/Oasis+Dental+Clinic/@0.346664,32.5624629,17z/" target="_blank" rel="noopener" class="hidden md:flex items-center gap-1.5 underline-grow opacity-90 hover:opacity-100">
+        <i class="fa-brands fa-google text-[var(--mint)]"></i> Find us on Google Maps
+      </a>
+      <a href="tel:+256700000000" class="flex items-center gap-2 font-semibold">
+        <i class="fa-solid fa-phone text-[var(--mint)]"></i> +256 700 000 000
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header id="nav" class="sticky top-0 z-50 nav-blur bg-white/80 border-b border-[var(--line)]">
+  <div class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-xl ring-tile flex items-center justify-center shadow-lg shadow-teal-900/20">
+        <svg viewBox="0 0 24 24" class="w-6 h-6 text-white" fill="currentColor"><path d="M12 2c-2.5 0-3.5 1-5 1S4 2.5 4 5c0 3 .5 4 1 7s.5 6 1.5 7.5C7.5 21 8 22 9 22s1.5-2 1.5-4 .5-3 1.5-3 1.5 1 1.5 3 .5 4 1.5 4 1.5-1 2.5-2.5c1-1.5 1-4.5 1.5-7.5s1-4 1-7c0-2.5-1.5-2-3-2s-2.5-1-5-1Z"/></svg>
+      </div>
+      <div class="leading-tight">
+        <div class="font-display text-xl font-700 text-[var(--ink)]">Oasis Dental</div>
+        <div class="text-[10px] tracking-[0.25em] uppercase text-[var(--teal-deep)] font-semibold">Clinic · Kampala</div>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-[var(--ink-soft)]">
+      <a href="#services" class="underline-grow hover:text-[var(--teal-deep)]">Services</a>
+      <a href="#about" class="underline-grow hover:text-[var(--teal-deep)]">About</a>
+      <a href="#why" class="underline-grow hover:text-[var(--teal-deep)]">Why Us</a>
+      <a href="#reviews" class="underline-grow hover:text-[var(--teal-deep)]">Reviews</a>
+      <a href="#location" class="underline-grow hover:text-[var(--teal-deep)]">Location</a>
+      <a href="#faq" class="underline-grow hover:text-[var(--teal-deep)]">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#book" class="hidden sm:inline-flex btn-primary text-white px-5 py-3 rounded-full text-sm font-semibold items-center gap-2">
+        <i class="fa-regular fa-calendar-check"></i> Book Appointment
+      </a>
+      <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-xl border border-[var(--line)] flex items-center justify-center text-[var(--ink)]">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="mobile-menu closed fixed inset-0 z-[60] bg-[var(--ink)]/95 lg:hidden">
+  <div class="flex items-center justify-between p-5">
+    <span class="font-display text-white text-2xl">Menu</span>
+    <button id="closeMenu" class="w-11 h-11 rounded-xl bg-white/10 text-white flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="flex flex-col px-6 mt-6 gap-2 text-white text-lg">
+    <a href="#services" class="mob-link py-3 border-b border-white/10">Services</a>
+    <a href="#about" class="mob-link py-3 border-b border-white/10">About</a>
+    <a href="#why" class="mob-link py-3 border-b border-white/10">Why Choose Us</a>
+    <a href="#reviews" class="mob-link py-3 border-b border-white/10">Reviews</a>
+    <a href="#location" class="mob-link py-3 border-b border-white/10">Location & Hours</a>
+    <a href="#faq" class="mob-link py-3 border-b border-white/10">FAQ</a>
+  </nav>
+  <div class="p-6 mt-4 flex flex-col gap-3">
+    <a href="#book" class="mob-link btn-primary text-white text-center px-5 py-4 rounded-full font-semibold">Book Appointment</a>
+    <a href="tel:+256700000000" class="text-center px-5 py-4 rounded-full font-semibold border border-white/20 text-white"><i class="fa-solid fa-phone mr-2"></i> Call Now</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero-grad relative overflow-hidden">
+  <div class="blob blob-teal w-[420px] h-[420px] -top-20 -right-20"></div>
+  <div class="blob blob-gold w-[360px] h-[360px] bottom-10 -left-32"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-20 lg:pt-24 lg:pb-32 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6">
+        <div class="reveal inline-flex items-center gap-2 chip px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-[var(--teal)] animate-pulse"></span>
+          Accepting New Patients · Kampala
+        </div>
+        <h1 class="reveal reveal-delay-1 font-display text-5xl sm:text-6xl lg:text-7xl font-700 leading-[0.95] mt-6 text-balance text-[var(--ink)]">
+          A calmer way to <span class="italic font-600 text-[var(--teal-deep)]">care</span> for your smile.
+        </h1>
+        <p class="reveal reveal-delay-2 mt-6 text-lg text-[var(--ink-soft)] max-w-xl leading-relaxed">
+          Oasis Dental Clinic blends modern technology with a gentle, patient-first approach — from routine cleanings to advanced cosmetic and restorative dentistry. Your comfort is the standard, not the goal.
+        </p>
+
+        <div class="reveal reveal-delay-3 mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#book" class="btn-primary text-white px-7 py-4 rounded-full font-semibold flex items-center justify-center gap-2">
+            <i class="fa-regular fa-calendar-check"></i> Book Your Visit
+          </a>
+          <a href="tel:+256700000000" class="px-7 py-4 rounded-full font-semibold border border-[var(--ink)]/15 bg-white/70 text-[var(--ink)] flex items-center justify-center gap-2 hover:bg-white transition">
+            <i class="fa-solid fa-phone text-[var(--teal-deep)]"></i> Call the Clinic
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-4 mt-10 flex flex-wrap items-center gap-6 text-sm text-[var(--ink-soft)]">
+          <div class="flex items-center gap-2">
+            <div class="flex star">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <span class="font-semibold text-[var(--ink)]">Loved by patients</span>
+          </div>
+          <div class="hidden sm:flex items-center gap-2"><i class="fa-solid fa-shield-heart text-[var(--teal-deep)]"></i> Sterilised, single-use tools</div>
+          <div class="flex items-center gap-2"><i class="fa-regular fa-clock text-[var(--teal-deep)]"></i> Same-day emergencies</div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 relative">
+        <div class="relative">
+          <!-- Hero image / video poster -->
+          <div class="reveal reveal-delay-2 relative rounded-[2rem] overflow-hidden photo-frame">
+            <div class="aspect-[4/5] sm:aspect-[5/5] lg:aspect-[4/5] video-cover relative">
+              <div class="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/70 via-transparent to-transparent"></div>
+              <button id="playVideo" class="absolute inset-0 flex items-center justify-center group">
+                <span class="w-20 h-20 rounded-full bg-white/90 flex items-center justify-center shadow-2xl group-hover:scale-110 transition">
+                  <i class="fa-solid fa-play text-[var(--teal-deep)] text-xl ml-1"></i>
+                </span>
+              </button>
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <div class="text-xs uppercase tracking-[0.25em] opacity-80">Inside the Clinic</div>
+                <div class="font-display text-2xl font-600 mt-1">A tour of your oasis</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating card -->
+          <div class="absolute -left-4 sm:-left-8 bottom-10 glass rounded-2xl p-4 w-56 shadow-xl float">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-[var(--teal)]/15 flex items-center justify-center">
+                <i class="fa-solid fa-tooth text-[var(--teal-deep)] text-lg"></i>
+              </div>
+              <div>
+                <div class="text-2xl font-display font-700 ticker-num">5,000+</div>
+                <div class="text-xs text-[var(--ink-soft)]">Smiles brightened</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating rating card -->
+          <div class="absolute -right-3 sm:-right-6 top-8 glass rounded-2xl p-4 shadow-xl float" style="animation-delay:1.5s">
+            <div class="flex items-center gap-1 star text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="text-xs text-[var(--ink-soft)] mt-1 font-medium">Verified Google reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- trust strip -->
+  <div class="border-t border-[var(--line)] bg-white/50">
+    <div class="max-w-7xl mx-auto px-5 py-6 overflow-hidden">
+      <div class="flex items-center gap-3 text-[var(--ink-soft)] text-xs uppercase tracking-[0.25em] font-semibold">
+        <span class="whitespace-nowrap">Trusted dental care</span>
+        <span class="h-px flex-1 bg-[var(--line)]"></span>
+      </div>
+      <div class="mt-5 overflow-hidden">
+        <div class="marquee flex gap-12 whitespace-nowrap text-[var(--ink)]/70 font-display text-xl items-center w-max">
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Family Dentistry</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Teeth Whitening</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Dental Implants</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Invisalign & Braces</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Root Canal Therapy</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Cosmetic Veneers</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Pediatric Dentistry</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Family Dentistry</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Teeth Whitening</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Dental Implants</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Invisalign & Braces</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Root Canal Therapy</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Cosmetic Veneers</span>
+          <span class="flex items-center gap-3"><i class="fa-solid fa-tooth text-[var(--teal-deep)]"></i> Pediatric Dentistry</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="fixed inset-0 z-[80] bg-[var(--ink)]/90 hidden items-center justify-center p-4">
+  <button id="closeVideo" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20"><i class="fa-solid fa-xmark text-xl"></i></button>
+  <div class="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
+    <iframe id="videoFrame" class="w-full h-full" src="" title="Oasis Dental Clinic Tour" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="bg-[var(--ink)] text-white relative overflow-hidden">
+  <div class="blob blob-teal w-96 h-96 -top-20 right-10 opacity-30"></div>
+  <div class="max-w-7xl mx-auto px-5 py-16 relative z-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="font-display text-5xl font-700 ticker-num" data-count="5000" data-suffix="+">0</div>
+        <div class="text-sm text-white/60 mt-2 uppercase tracking-wider">Smiles Restored</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="font-display text-5xl font-700 ticker-num" data-count="15" data-suffix="+">0</div>
+        <div class="text-sm text-white/60 mt-2 uppercase tracking-wider">Dental Services</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="font-display text-5xl font-700 ticker-num" data-count="98" data-suffix="%">0</div>
+        <div class="text-sm text-white/60 mt-2 uppercase tracking-wider">Patient Satisfaction</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="font-display text-5xl font-700 ticker-num" data-count="6" data-suffix=" days">0</div>
+        <div class="text-sm text-white/60 mt-2 uppercase tracking-wider">Open Weekly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 lg:py-28 relative">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-10 items-end mb-14">
+      <div class="lg:col-span-7 reveal">
+        <div class="flex items-center gap-3">
+          <span class="accent-bar"></span>
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">What We Do</span>
+        </div>
+        <h2 class="font-display text-4xl lg:text-6xl font-700 mt-4 leading-[1.05] text-balance">Comprehensive dental care, under one calm roof.</h2>
+      </div>
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <p class="text-[var(--ink-soft)] text-lg leading-relaxed">From preventive checkups to complete smile makeovers, every treatment at Oasis is delivered with precision, modern equipment, and a focus on your long-term oral health.</p>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Service cards -->
+      <article class="service-card rounded-2xl p-7 reveal">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-tooth"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">General Dentistry</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Routine exams, professional cleanings, fillings, and preventive care that keep your smile healthy for life.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal reveal-delay-1">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Cosmetic Dentistry</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Veneers, bonding, and smile design tailored to your face — for results that look naturally beautiful.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal reveal-delay-2">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Dental Implants</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Permanent, natural-looking tooth replacement using modern implant systems designed for durability.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-children"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Orthodontics</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Traditional braces and clear aligners to gently straighten teeth and correct bite issues for all ages.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal reveal-delay-1">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Teeth Whitening</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Safe, professional whitening that lifts years of staining in a single visit — up to several shades brighter.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal reveal-delay-2">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Root Canal Therapy</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Pain-relieving, tooth-saving endodontic treatment performed gently with modern anaesthesia.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-baby"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Pediatric Dentistry</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">A warm, friendly environment that helps children build healthy dental habits without fear.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal reveal-delay-1">
+        <div class="w-14 h-14 rounded-xl service-icon flex items-center justify-center text-2xl"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Emergency Care</h3>
+        <p class="text-[var(--ink-soft)] mt-2 text-sm leading-relaxed">Same-day appointments for dental pain, broken teeth, swelling, and trauma. Relief when you need it most.</p>
+        <a href="tel:+256700000000" class="mt-5 inline-flex items-center gap-2 text-[var(--coral)] font-semibold text-sm underline-grow">Call emergency <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+
+      <article class="service-card rounded-2xl p-7 reveal reveal-delay-2 bg-[var(--ink)] text-white border-[var(--ink)]">
+        <div class="w-14 h-14 rounded-xl bg-white/10 text-[var(--mint)] flex items-center justify-center text-2xl"><i class="fa-solid fa-crown"></i></div>
+        <h3 class="font-display text-2xl font-600 mt-5">Crowns & Bridges</h3>
+        <p class="text-white/70 mt-2 text-sm leading-relaxed">Custom-milled restorations that rebuild structure, restore function, and look indistinguishable from natural teeth.</p>
+        <a href="#book" class="mt-5 inline-flex items-center gap-2 text-[var(--mint)] font-semibold text-sm underline-grow">Book visit <i class="fa-solid fa-arrow-right text-xs"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 lg:py-28 bg-[var(--sand)] relative overflow-hidden">
+  <div class="blob blob-teal w-80 h-80 -bottom-20 right-0 opacity-40"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="relative">
+          <div class="rounded-[2rem] overflow-hidden photo-frame">
+            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Oasis Dental Clinic interior" class="w-full h-[520px] object-cover">
+          </div>
+          <div class="absolute -bottom-6 -right-4 sm:-right-8 bg-white rounded-2xl shadow-xl p-5 w-60">
+            <div class="text-xs uppercase tracking-wider text-[var(--ink-soft)]">Modern Equipment</div>
+            <div class="font-display text-2xl font-700 mt-1">Digital X-rays</div>
+            <p class="text-xs text-[var(--ink-soft)] mt-1">Lower radiation, clearer results.</p>
+          </div>
+          <div class="absolute -top-5 -left-3 sm:-left-6 bg-[var(--teal-deep)] text-white rounded-2xl shadow-xl px-5 py-4">
+            <div class="font-display text-3xl font-700">Oasis</div>
+            <div class="text-[10px] uppercase tracking-[0.2em] opacity-80">Dental Clinic</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal reveal-delay-1">
+        <div class="flex items-center gap-3">
+          <span class="accent-bar"></span>
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">About Oasis</span>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 mt-4 leading-[1.1] text-balance">Your smile deserves a clinic that feels like an oasis — calm, modern, and genuinely caring.</h2>
+        <p class="text-[var(--ink-soft)] text-lg mt-6 leading-relaxed">
+          Oasis Dental Clinic was founded on a simple belief: dental visits should never feel stressful. From the moment you walk in, you're met with a soothing environment, attentive staff, and clinicians who take time to listen before they treat.
+        </p>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">
+          We blend proven techniques with modern technology — digital imaging, sterilised single-use instruments, and comfortable treatment suites — to deliver care that's precise, predictable, and gentle.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-5 mt-8">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[var(--teal)]/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-[var(--teal-deep)]"></i></div>
+            <div>
+              <div class="font-semibold">Patient-first philosophy</div>
+              <div class="text-sm text-[var(--ink-soft)]">No rushed appointments. Ever.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[var(--teal)]/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-[var(--teal-deep)]"></i></div>
+            <div>
+              <div class="font-semibold">Transparent pricing</div>
+              <div class="text-sm text-[var(--ink-soft)]">Clear quotes before treatment begins.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[var(--teal)]/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-[var(--teal-deep)]"></i></div>
+            <div>
+              <div class="font-semibold">Gentle, modern techniques</div>
+              <div class="text-sm text-[var(--ink-soft)]">Designed to minimise discomfort.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-[var(--teal)]/10 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-[var(--teal-deep)]"></i></div>
+            <div>
+              <div class="font-semibold">Strict sterilisation</div>
+              <div class="text-sm text-[var(--ink-soft)]">Hospital-grade hygiene standards.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#book" class="btn-primary text-white px-6 py-3.5 rounded-full font-semibold inline-flex items-center justify-center gap-2"><i class="fa-regular fa-calendar-check"></i> Schedule a Consultation</a>
+          <a href="#services" class="px-6 py-3.5 rounded-full font-semibold border border-[var(--ink)]/15 bg-white inline-flex items-center justify-center gap-2 hover:bg-[var(--sand)] transition">View All Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="blob blob-gold w-96 h-96 top-10 -left-20 opacity-40"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+      <div class="flex items-center gap-3 justify-center">
+        <span class="accent-bar"></span>
+        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">The Oasis Difference</span>
+        <span class="accent-bar"></span>
+      </div>
+      <h2 class="font-display text-4xl lg:text-6xl font-700 mt-4 leading-[1.05] text-balance">Why Kampala chooses Oasis Dental.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="count-card rounded-2xl p-7 border border-[var(--line)] hover-lift reveal">
+        <div class="w-14 h-14 rounded-2xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-2xl"><i class="fa-solid fa-microscope"></i></div>
+        <h3 class="font-display text-xl font-600 mt-5">Modern Technology</h3>
+        <p class="text-sm text-[var(--ink-soft)] mt-2 leading-relaxed">Digital imaging, intraoral cameras, and precision tools for accurate, efficient treatment.</p>
+      </div>
+      <div class="count-card rounded-2xl p-7 border border-[var(--line)] hover-lift reveal reveal-delay-1">
+        <div class="w-14 h-14 rounded-2xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-2xl"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3 class="font-display text-xl font-600 mt-5">Gentle Approach</h3>
+        <p class="text-sm text-[var(--ink-soft)] mt-2 leading-relaxed">Pace and anaesthesia tailored to your comfort. Anxious patients are especially welcome.</p>
+      </div>
+      <div class="count-card rounded-2xl p-7 border border-[var(--line)] hover-lift reveal reveal-delay-2">
+        <div class="w-14 h-14 rounded-2xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-2xl"><i class="fa-solid fa-shield-virus"></i></div>
+        <h3 class="font-display text-xl font-600 mt-5">Safety First</h3>
+        <p class="text-sm text-[var(--ink-soft)] mt-2 leading-relaxed">Single-use instruments and rigorous sterilisation protocols on every patient, every time.</p>
+      </div>
+      <div class="count-card rounded-2xl p-7 border border-[var(--line)] hover-lift reveal reveal-delay-3">
+        <div class="w-14 h-14 rounded-2xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-2xl"><i class="fa-solid fa-clock-rotate-left"></i></div>
+        <h3 class="font-display text-xl font-600 mt-5">Punctual Appointments</h3>
+        <p class="text-sm text-[var(--ink-soft)] mt-2 leading-relaxed">We respect your schedule. Minimal waiting, on-time treatment, every visit.</p>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <div class="mt-20">
+      <div class="text-center mb-12 reveal">
+        <h3 class="font-display text-3xl lg:text-4xl font-700">Your visit, simplified.</h3>
+        <p class="text-[var(--ink-soft)] mt-3">Four easy steps from first call to confident smile.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="relative p-7 rounded-2xl bg-white border border-[var(--line)] reveal">
+          <div class="font-display text-6xl font-700 text-[var(--teal)]/15 absolute top-3 right-4">01</div>
+          <i class="fa-solid fa-phone text-2xl text-[var(--teal-deep)]"></i>
+          <h4 class="font-display text-xl font-600 mt-4">Reach Out</h4>
+          <p class="text-sm text-[var(--ink-soft)] mt-2">Call or book online. We'll find a time that works for you.</p>
+        </div>
+        <div class="relative p-7 rounded-2xl bg-white border border-[var(--line)] reveal reveal-delay-1">
+          <div class="font-display text-6xl font-700 text-[var(--teal)]/15 absolute top-3 right-4">02</div>
+          <i class="fa-solid fa-clipboard-list text-2xl text-[var(--teal-deep)]"></i>
+          <h4 class="font-display text-xl font-600 mt-4">Consultation</h4>
+          <p class="text-sm text-[var(--ink-soft)] mt-2">Thorough exam and honest assessment — no pressure, no surprises.</p>
+        </div>
+        <div class="relative p-7 rounded-2xl bg-white border border-[var(--line)] reveal reveal-delay-2">
+          <div class="font-display text-6xl font-700 text-[var(--teal)]/15 absolute top-3 right-4">03</div>
+          <i class="fa-solid fa-tooth text-2xl text-[var(--teal-deep)]"></i>
+          <h4 class="font-display text-xl font-600 mt-4">Treatment</h4>
+          <p class="text-sm text-[var(--ink-soft)] mt-2">Comfortable, precise care using modern equipment and gentle technique.</p>
+        </div>
+        <div class="relative p-7 rounded-2xl bg-white border border-[var(--line)] reveal reveal-delay-3">
+          <div class="font-display text-6xl font-700 text-[var(--teal)]/15 absolute top-3 right-4">04</div>
+          <i class="fa-solid fa-face-smile-beam text-2xl text-[var(--teal-deep)]"></i>
+          <h4 class="font-display text-xl font-600 mt-4">Aftercare</h4>
+          <p class="text-sm text-[var(--ink-soft)] mt-2">Clear guidance and follow-ups to keep your smile healthy long-term.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="py-20 lg:py-28 bg-[var(--ink)] text-white relative overflow-hidden">
+  <div class="blob blob-teal w-96 h-96 top-0 right-0 opacity-25"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="accent-bar"></span>
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--mint)]">Inside Oasis</span>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 mt-4 leading-[1.1]">A space designed to put you at ease.</h2>
+      </div>
+      <p class="text-white/60 max-w-md">Every detail — from lighting to seating to sterilisation — is built around your comfort and safety.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 reveal">
+      <div class="rounded-2xl overflow-hidden aspect-square group">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80" alt="Dental treatment room" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square group lg:row-span-2 lg:aspect-auto">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Modern dental chair" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square group">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80" alt="Dental tools" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square group">
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80" alt="Clinic reception" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square group">
+        <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=600&q=80" alt="Dentist with patient" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square group">
+        <img src="https://images.unsplash.com/photo-1581585504967-8a4f90ddae5d?auto=format&fit=crop&w=600&q=80" alt="Smiling patient" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square group">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Dental clinic" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 lg:py-28 relative">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-10 items-end mb-14">
+      <div class="lg:col-span-7 reveal">
+        <div class="flex items-center gap-3">
+          <span class="accent-bar"></span>
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">Patient Stories</span>
+        </div>
+        <h2 class="font-display text-4xl lg:text-6xl font-700 mt-4 leading-[1.05] text-balance">Real smiles. Real reviews.</h2>
+      </div>
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="flex items-center gap-4">
+          <div class="font-display text-6xl font-700">5.0</div>
+          <div>
+            <div class="flex star text-lg">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <div class="text-sm text-[var(--ink-soft)] mt-1">Average rating on Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <article class="bg-white rounded-2xl p-7 border border-[var(--line)] hover-lift reveal">
+        <div class="flex star mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-[var(--ink)] leading-relaxed">"From the moment I walked in, I felt at ease. The staff are friendly and the dentist took time to explain everything. Best dental experience I've had in Kampala."</p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-[var(--line)]">
+          <div class="w-11 h-11 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center font-semibold">A</div>
+          <div>
+            <div class="font-semibold text-sm">Amelia K.</div>
+            <div class="text-xs text-[var(--ink-soft)]">Verified Google Review</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-7 border border-[var(--line)] hover-lift reveal reveal-delay-1">
+        <div class="flex star mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-[var(--ink)] leading-relaxed">"I used to dread the dentist. Oasis completely changed that. The clinic is spotless, modern, and the team is so gentle. My kids actually look forward to checkups now."</p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-[var(--line)]">
+          <div class="w-11 h-11 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center font-semibold">D</div>
+          <div>
+            <div class="font-semibold text-sm">David M.</div>
+            <div class="text-xs text-[var(--ink-soft)]">Verified Google Review</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-7 border border-[var(--line)] hover-lift reveal reveal-delay-2">
+        <div class="flex star mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-[var(--ink)] leading-relaxed">"Got my veneers done here and I cannot stop smiling. The results look completely natural. Professional service from start to finish. Highly recommend."</p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-[var(--line)]">
+          <div class="w-11 h-11 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center font-semibold">S</div>
+          <div>
+            <div class="font-semibold text-sm">Sarah N.</div>
+            <div class="text-xs text-[var(--ink-soft)]">Verified Google Review</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-7 border border-[var(--line)] hover-lift reveal">
+        <div class="flex star mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-[var(--ink)] leading-relaxed">"Had a dental emergency on a weekend and they saw me the same day. Pain gone within the hour. Forever grateful for their quick response and care."</p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-[var(--line)]">
+          <div class="w-11 h-11 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center font-semibold">J</div>
+          <div>
+            <div class="font-semibold text-sm">Joseph O.</div>
+            <div class="text-xs text-[var(--ink-soft)]">Verified Google Review</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-7 border border-[var(--line)] hover-lift reveal reveal-delay-1">
+        <div class="flex star mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-[var(--ink)] leading-relaxed">"Fair pricing, no upselling, and excellent results. The whitening treatment was worth every shilling. My teeth are several shades brighter in one session."</p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-[var(--line)]">
+          <div class="w-11 h-11 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center font-semibold">P</div>
+          <div>
+            <div class="font-semibold text-sm">Patience L.</div>
+            <div class="text-xs text-[var(--ink-soft)]">Verified Google Review</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-[var(--ink)] text-white rounded-2xl p-7 hover-lift reveal reveal-delay-2">
+        <div class="flex star mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-white/90 leading-relaxed">"I had implants placed here after years of hiding my smile. The process was smooth, the team reassuring, and the result life-changing. I can't thank them enough."</p>
+        <div class="flex items-center gap-3 mt-5 pt-5 border-t border-white/10">
+          <div class="w-11 h-11 rounded-full bg-[var(--mint)]/20 text-[var(--mint)] flex items-center justify-center font-semibold">R</div>
+          <div>
+            <div class="font-semibold text-sm">Robert T.</div>
+            <div class="text-xs text-white/60">Verified Google Review</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="https://www.google.com/maps/place/Oasis+Dental+Clinic/@0.346664,32.5624629,17z/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold border border-[var(--ink)]/15 bg-white hover:bg-[var(--sand)] transition">
+        <i class="fa-brands fa-google text-[var(--teal-deep)]"></i> Read all reviews on Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK / CTA -->
+<section id="book" class="py-20 lg:py-28 bg-[var(--sand)] relative overflow-hidden">
+  <div class="blob blob-teal w-96 h-96 -top-20 -left-20 opacity-40"></div>
+  <div class="blob blob-gold w-80 h-80 bottom-0 right-0 opacity-30"></div>
+  <div class="max-w-7xl mx-auto px-5 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 reveal">
+        <div class="flex items-center gap-3">
+          <span class="accent-bar"></span>
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">Book Your Visit</span>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl font-700 mt-4 leading-[1.05] text-balance">Your healthier smile starts with one easy appointment.</h2>
+        <p class="text-[var(--ink-soft)] text-lg mt-5 leading-relaxed">Tell us a little about what you need and our team will confirm your booking within business hours. Prefer to talk? Call us directly — we're happy to help.</p>
+
+        <div class="mt-8 space-y-4">
+          <a href="tel:+256700000000" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[var(--line)] hover-lift">
+            <div class="w-12 h-12 rounded-xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-xl"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="text-xs text-[var(--ink-soft)] uppercase tracking-wider">Call the clinic</div>
+              <div class="font-display text-xl font-600">+256 700 000 000</div>
+            </div>
+          </a>
+          <a href="https://wa.me/256700000000" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[var(--line)] hover-lift">
+            <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 text-[#1da851] flex items-center justify-center text-xl"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <div class="text-xs text-[var(--ink-soft)] uppercase tracking-wider">Chat on WhatsApp</div>
+              <div class="font-display text-xl font-600">Message us instantly</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="mt-6 p-4 rounded-2xl badge-verified flex items-start gap-3">
+          <i class="fa-solid fa-circle-info mt-0.5"></i>
+          <p class="text-sm">Same-day appointments available for dental emergencies. Call ahead and we'll prioritise your case.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal reveal-delay-1">
+        <form id="bookingForm" class="bg-white rounded-3xl p-7 sm:p-9 shadow-xl border border-[var(--line)]">
+          <h3 class="font-display text-2xl font-700">Request an appointment</h3>
+          <p class="text-sm text-[var(--ink-soft)] mt-1">We'll confirm by phone or WhatsApp within a few hours.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)]">Full name *</label>
+              <input required type="text" name="name" class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="e.g. Jane Mukasa">
+            </div>
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)]">Phone number *</label>
+              <input required type="tel" name="phone" class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="+256 ...">
+            </div>
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)]">Email</label>
+              <input type="email" name="email" class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="you@example.com">
+            </div>
+            <div>
+              <label class="text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)]">Preferred date</label>
+              <input type="date" name="date" class="field w-full mt-2 px-4 py-3 rounded-xl">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)]">Service needed</label>
+              <select name="service" class="field w-full mt-2 px-4 py-3 rounded-xl">
+                <option>General checkup & cleaning</option>
+                <option>Teeth whitening</option>
+                <option>Cosmetic veneers</option>
+                <option>Dental implants</option>
+                <option>Orthodontics / braces</option>
+                <option>Root canal therapy</option>
+                <option>Crowns & bridges</option>
+                <option>Pediatric dentistry</option>
+                <option>Emergency / pain relief</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)]">Anything we should know?</label>
+              <textarea name="message" rows="3" class="field w-full mt-2 px-4 py-3 rounded-xl resize-none" placeholder="Briefly describe your symptoms or questions..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary text-white w-full mt-6 px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-2">
+            <i class="fa-regular fa-paper-plane"></i> Request Appointment
+          </button>
+          <p class="text-xs text-[var(--ink-soft)] mt-3 text-center">By submitting, you agree to be contacted about your appointment. We respect your privacy.</p>
+
+          <div id="formSuccess" class="hidden mt-5 p-4 rounded-xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-xl"></i>
+            <div>
+              <div class="font-semibold">Request received!</div>
+              <div class="text-sm">Our team will reach out shortly to confirm your appointment.</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION & HOURS -->
+<section id="location" class="py-20 lg:py-28 relative">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <div class="flex items-center gap-3 justify-center">
+        <span class="accent-bar"></span>
+        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">Find Us</span>
+        <span class="accent-bar"></span>
+      </div>
+      <h2 class="font-display text-4xl lg:text-6xl font-700 mt-4 leading-[1.05] text-balance">Visit Oasis Dental in Kampala.</h2>
+      <p class="text-[var(--ink-soft)] mt-4 text-lg">Conveniently located with easy access and parking. Walk-ins welcome — appointments preferred.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-7 rounded-3xl overflow-hidden border border-[var(--line)] shadow-lg reveal">
+        <iframe
+          class="map-embed w-full h-[400px] lg:h-full"
+          src="https://www.google.com/maps?q=Oasis+Dental+Clinic,+Kampala,+Uganda&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Oasis Dental Clinic Location"></iframe>
+      </div>
+
+      <div class="lg:col-span-5 space-y-5">
+        <div class="bg-white rounded-2xl p-7 border border-[var(--line)] reveal reveal-delay-1">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h3 class="font-display text-xl font-600">Address</h3>
+              <p class="text-[var(--ink-soft)] mt-1">Oasis Dental Clinic<br>Kampala, Uganda</p>
+              <a href="https://www.google.com/maps/place/Oasis+Dental+Clinic/@0.346664,32.5624629,17z/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-3 text-[var(--teal-deep)] font-semibold text-sm underline-grow">Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-7 border border-[var(--line)] reveal reveal-delay-2">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center text-xl flex-shrink-0"><i class="fa-regular fa-clock"></i></div>
+            <div class="flex-1">
+              <h3 class="font-display text-xl font-600">Opening Hours</h3>
+              <ul class="mt-3 space-y-2 text-sm">
+                <li class="flex justify-between py-1.5 border-b border-[var(--line)]"><span class="text-[var(--ink-soft)]">Monday</span><span class="font-semibold">8:00 AM – 7:00 PM</span></li>
+                <li class="flex justify-between py-1.5 border-b border-[var(--line)]"><span class="text-[var(--ink-soft)]">Tuesday</span><span class="font-semibold">8:00 AM – 7:00 PM</span></li>
+                <li class="flex justify-between py-1.5 border-b border-[var(--line)]"><span class="text-[var(--ink-soft)]">Wednesday</span><span class="font-semibold">8:00 AM – 7:00 PM</span></li>
+                <li class="flex justify-between py-1.5 border-b border-[var(--line)]"><span class="text-[var(--ink-soft)]">Thursday</span><span class="font-semibold">8:00 AM – 7:00 PM</span></li>
+                <li class="flex justify-between py-1.5 border-b border-[var(--line)]"><span class="text-[var(--ink-soft)]">Friday</span><span class="font-semibold">8:00 AM – 7:00 PM</span></li>
+                <li class="flex justify-between py-1.5 border-b border-[var(--line)]"><span class="text-[var(--ink-soft)]">Saturday</span><span class="font-semibold">9:00 AM – 5:00 PM</span></li>
+                <li class="flex justify-between py-1.5"><span class="text-[var(--ink-soft)]">Sunday</span><span class="font-semibold text-[var(--coral)]">Emergency only</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[var(--ink)] text-white rounded-2xl p-7 reveal reveal-delay-3">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-white/10 text-[var(--mint)] flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h3 class="font-display text-xl font-600">Contact</h3>
+              <a href="tel:+256700000000" class="block mt-1 hover:text-[var(--mint)] transition">+256 700 000 000</a>
+              <a href="mailto:hello@oasisdental.ug" class="block text-white/70 hover:text-white transition">hello@oasisdental.ug</a>
+              <div class="flex gap-2 mt-4">
+                <a href="https://wa.me/256700000000" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.google.com/maps/place/Oasis+Dental+Clinic/@0.346664,32.5624629,17z/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"><i class="fa-brands fa-google"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 lg:py-28 bg-[var(--sand)]">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <div class="flex items-center gap-3 justify-center">
+        <span class="accent-bar"></span>
+        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-[var(--teal-deep)]">Questions</span>
+        <span class="accent-bar"></span>
+      </div>
+      <h2 class="font-display text-4xl lg:text-6xl font-700 mt-4 leading-[1.05] text-balance">Frequently asked questions.</h2>
+    </div>
+
+    <div class="space-y-3">
+      <details class="faq-item bg-white rounded-2xl border border-[var(--line)] p-6 reveal" open>
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-display text-xl font-600">Do you accept walk-in patients?</span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plus"></i></span>
+        </summary>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">Yes, walk-ins are welcome, though we strongly recommend booking in advance to guarantee a time slot and minimise your wait. Emergencies are always prioritised.</p>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-[var(--line)] p-6 reveal reveal-delay-1">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-display text-xl font-600">I'm nervous about dental visits. Can you help?</span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plus"></i></span>
+        </summary>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">Absolutely. Many of our patients come to us specifically because of dental anxiety. We take a gentle, communicative approach — explaining each step, pacing treatment to your comfort, and using modern anaesthesia for pain-free care.</p>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-[var(--line)] p-6 reveal reveal-delay-2">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-display text-xl font-600">How much does a consultation cost?</span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plus"></i></span>
+        </summary>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">Consultation fees vary depending on the complexity of your case and any imaging required. We always provide a clear, itemised quote before any treatment begins — no surprises, ever. Call us for current pricing.</p>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-[var(--line)] p-6 reveal reveal-delay-3">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-display text-xl font-600">Do you treat children?</span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plus"></i></span>
+        </summary>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">Yes — we love seeing young patients. Our pediatric dental services are designed to make children feel safe and even excited about dental visits, building healthy habits that last a lifetime.</p>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-[var(--line)] p-6 reveal reveal-delay-4">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-display text-xl font-600">What should I do in a dental emergency?</span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plus"></i></span>
+        </summary>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">Call us immediately. We reserve same-day slots for emergencies including severe pain, swelling, broken teeth, and dental trauma. The sooner you call, the sooner we can relieve your pain and protect your tooth.</p>
+      </details>
+
+      <details class="faq-item bg-white rounded-2xl border border-[var(--line)] p-6 reveal reveal-delay-4">
+        <summary class="flex items-center justify-between gap-4">
+          <span class="font-display text-xl font-600">What payment methods do you accept?</span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-[var(--teal)]/10 text-[var(--teal-deep)] flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-plus"></i></span>
+        </summary>
+        <p class="text-[var(--ink-soft)] mt-4 leading-relaxed">We accept cash, mobile money, and major bank cards. For larger treatment plans, we can discuss staged payment scheduling — just ask our front desk during your consultation.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-20 lg:py-24 bg-[var(--ink)] text-white relative overflow-hidden">
+  <div class="blob blob-teal w-96 h-96 top-0 left-1/4 opacity-30"></div>
+  <div class="blob blob-gold w-80 h-80 bottom-0 right-10 opacity-20"></div>
+  <div class="max-w-5xl mx-auto px-5 text-center relative z-10 reveal">
+    <div class="tooth-bounce inline-block mb-6">
+      <svg viewBox="0 0 24 24" class="w-14 h-14 text-[var(--mint)]" fill="currentColor"><path d="M12 2c-2.5 0-3.5 1-5 1S4 2.5 4 5c0 3 .5 4 1 7s.5 6 1.5 7.5C7.5 21 8 22 9 22s1.5-2 1.5-4 .5-3 1.5-3 1.5 1 1.5 3 .5 4 1.5 4 1.5-1 2.5-2.5c1-1.5 1-4.5 1.5-7.5s1-4 1-7c0-2.5-1.5-2-3-2s-2.5-1-5-1Z"/></svg>
+    </div>
+    <h2 class="font-display text-4xl lg:text-6xl font-700 leading-[1.05] text-balance">Ready for a smile you'll love?</h2>
+    <p class="text-white/70 text-lg mt-5 max-w-2xl mx-auto">Book your appointment at Oasis Dental Clinic today. Friendly care, modern dentistry, and a calmer experience — right here in Kampala.</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="#book" class="btn-primary text-white px-8 py-4 rounded-full font-semibold inline-flex items-center justify-center gap-2"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>
+      <a href="tel:+256700000000" class="px-8 py-4 rounded-full font-semibold border border-white/20 text-white inline-flex items-center justify-center gap-2 hover:bg-white/5 transition"><i class="fa-solid fa-phone"></i> Call +256 700 000 000</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#06182b] text-white/70 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div>
+        <a href="#home" class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" class="w-6 h-6 text-[var(--mint)]" fill="currentColor"><path d="M12 2c-2.5 0-3.5 1-5 1S4 2.5 4 5c0 3 .5 4 1 7s.5 6 1.5 7.5C7.5 21 8 22 9 22s1.5-2 1.5-4 .5-3 1.5-3 1.5 1 1.5 3 .5 4 1.5 4 1.5-1 2.5-2.5c1-1.5 1-4.5 1.5-7.5s1-4 1-7c0-2.5-1.5-2-3-2s-2.5-1-5-1Z"/></svg>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-xl font-700 text-white">Oasis Dental</div>
+            <div class="text-[10px] tracking-[0.25em] uppercase text-[var(--mint)] font-semibold">Clinic · Kampala</div>
+          </div>
+        </a>
+        <p class="text-sm leading-relaxed">Premium, gentle dental care in the heart of Kampala. Modern dentistry with a human touch.</p>
+        <div class="flex gap-2 mt-5">
+          <a href="https://wa.me/256700000000" class="w-10 h-10 rounded-full bg-white/5 hover:bg-[var(--teal)] hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-[var(--teal)] hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 hover:bg-[var(--teal)] hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.google.com/maps/place/Oasis+Dental+Clinic/@0.346664,32.5624629,17z/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/5 hover:bg-[var(--teal)] hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Services</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#services" class="hover:text-[var(--mint)] transition">General Dentistry</a></li>
+          <li><a href="#services" class="hover:text-[var(--mint)] transition">Cosmetic Dentistry</a></li>
+          <li><a href="#services" class="hover:text-[var(--mint)] transition">Dental Implants</a></li>
+          <li><a href="#services" class="hover:text-[var(--mint)] transition">Orthodontics</a></li>
+          <li><a href="#services" class="hover:text-[var(--mint)] transition">Teeth Whitening</a></li>
+          <li><a href="#services" class="hover:text-[var(--mint)] transition">Emergency Care</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#about" class="hover:text-[var(--mint)] transition">About Us</a></li>
+          <li><a href="#why" class="hover:text-[var(--mint)] transition">Why Choose Us</a></li>
+          <li><a href="#reviews" class="hover:text-[var(--mint)] transition">Patient Reviews</a></li>
+          <li><a href="#location" class="hover:text-[var(--mint)] transition">Location & Hours</a></li>
+          <li><a href="#faq" class="hover:text-[var(--mint)] transition">FAQ</a></li>
+          <li><a href="#book" class="hover:text-[var(--mint)] transition">Book Appointment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Get in Touch</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-[var(--mint)] mt-1"></i><span>Kampala, Uganda</span></li>
+          <li class="flex items-start gap-3"><i class="fa-solid fa-phone text-[var(--mint)] mt-1"></i><a href="tel:+256700000000" class="hover:text-[var(--mint)] transition">+256 700 000 000</a></li>
+          <li class="flex items-start gap-3"><i class="fa-regular fa-envelope text-[var(--mint)] mt-1"></i><a href="mailto:hello@oasisdental.ug" class="hover:text-[var(--mint)] transition">hello@oasisdental.ug</a></li>
+          <li class="flex items-start gap-3"><i class="fa-regular fa-clock text-[var(--mint)] mt-1"></i><span>Mon–Sat: 8AM – 7PM<br>Sun: Emergency only</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>© <span id="year"></span> Oasis Dental Clinic. All rights reserved.</p>
+      <p class="flex items-center gap-2">Designed with <i class="fa-solid fa-heart text-[var(--coral)]"></i> for healthier smiles in Kampala.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating action buttons -->
+<div class="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
+  <a href="https://wa.me/256700000000" target="_blank" rel="noopener" class="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg shadow-green-600/40 flex items-center justify-center text-2xl hover:scale-110 transition" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="tel:+256700000000" class="w-14 h-14 rounded-full btn-primary text-white shadow-lg flex items-center justify-center text-xl hover:scale-110 transition" aria-label="Call">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+</div>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenu = document.getElementById('closeMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.remove('closed'));
+  closeMenu.addEventListener('click', () => mobileMenu.classList.add('closed'));
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('closed')));
+
+  // Video modal
+  const playBtn = document.getElementById('playVideo');
+  const videoModal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
+  const closeVideo = document.getElementById('closeVideo');
+  playBtn.addEventListener('click', () => {
+    videoFrame.src = 'https://www.youtube.com/embed/_8tV0R5kT3E?autoplay=1&rel=0';
+    videoModal.classList.remove('hidden');
+    videoModal.classList.add('flex');
+  });
+  closeVideo.addEventListener('click', () => {
+    videoFrame.src = '';
+    videoModal.classList.add('hidden');
+    videoModal.classList.remove('flex');
+  });
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+      videoFrame.src = '';
+      videoModal.classList.add('hidden');
+      videoModal.classList.remove('flex');
+    }
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Counter animation
+  const counters = document.querySelectorAll('[data-count]');
+  const cIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '';
+        const dur = 1800;
+        const start = performance.now();
+        function tick(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toLocaleString() + suffix;
+        }
+        requestAnimationFrame(tick);
+        cIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => cIO.observe(c));
+
+  // Booking form
+  const form = document.getElementById('bookingForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    success.classList.remove('hidden');
+    form.querySelectorAll('input, textarea, select, button').forEach(el => el.setAttribute('disabled',''));
+    setTimeout(() => {
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  });
+</script>
+</body>
+</html>
